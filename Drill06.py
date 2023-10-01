@@ -23,10 +23,9 @@ def handle_events():
             running = False
     pass
 
-def draw_point():
-    global points
-    for point in points:
-        hand_arrow.draw(point[0], point[1])
+def stamp_point():
+    for i in range(start_point, len(points)):
+        hand_arrow.draw(points[i][0], points[i][1])
 
 
 running = True
