@@ -27,6 +27,23 @@ def stamp_point():
     for i in range(start_point, len(points)):
         hand_arrow.draw(points[i][0], points[i][1])
 
+def set_point():
+    global x, y, i, point_count, start_point, index, start_x, start_y, end_x, end_y
+
+    t = i / 100
+    x = (1 - t) * start_x + t * end_x
+    y = (1 - t) * start_y + t * end_y
+
+    if point_count > 0:
+        i += 1
+        end_x, end_y = points[index]
+
+    if i >= 100:
+        i = 0
+        point_count -= 1
+        start_point += 1
+        start_x, start_y = points[index]
+        index += 1
 
 running = True
 x, y = 0, 0
