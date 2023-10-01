@@ -44,7 +44,24 @@ def set_point():
         start_point += 1
         start_x, start_y = points[index]
         index += 1
+        
+def draw_character():
+    global frame, direction, frame_speed
 
+    if start_x < end_x:
+        character.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
+        direction = 1
+    if start_x > end_x:
+        character.clip_draw(frame * 100, 100 * 0, 100, 100, x, y)
+        direction = 0
+    if start_x == end_x:
+        character.clip_draw(frame * 100, 100 * direction, 100, 100, x, y)
+
+    if frame_speed % 6 == 0:
+        frame = (frame + 1) % 8
+
+    frame_speed += 1
+    
 running = True
 x, y = 0, 0
 mouse_x, mouse_y = 0, 0
