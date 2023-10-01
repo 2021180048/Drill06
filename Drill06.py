@@ -44,7 +44,7 @@ def set_point():
         start_point += 1
         start_x, start_y = points[index]
         index += 1
-        
+
 def draw_character():
     global frame, direction, frame_speed
 
@@ -83,7 +83,10 @@ while running:
     TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
     hand_arrow.draw(mouse_x, mouse_y)
     stamp_point()
+    set_point()
+    draw_character()
     update_canvas()
     handle_events()
+    delay(0.01)
 
 close_canvas()
