@@ -47,12 +47,9 @@ hide_cursor()
 while running:
     clear_canvas()
     TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
-    hand_arrow.draw(x, y)
-    draw_point()
-    #character.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
+    hand_arrow.draw(mouse_x, mouse_y)
+    stamp_point()
     update_canvas()
-    #frame = (frame + 1) % 8
-
     handle_events()
 
 close_canvas()
